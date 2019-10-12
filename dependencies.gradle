@@ -1,0 +1,17 @@
+/**
+ * This is a centralized place to manage Gradle dependencies.
+ * This approach is an adoption of this practice:
+ * http://bytes.babbel.com/en/articles/2017-01-24-android-library-dependencies.html.
+ */
+
+def versions = new Expando()
+versions.kotlinVersion = "1.3.41"
+versions.androidPluginVersion = "3.5.1"
+versions.minSdkVersion = 23
+versions.compileSdkVersion = 29
+versions.appcompat = '1.1.0'
+versions.supportAndroidX = '1.0.0'
+versions.retrofit = "2.6.0"
+versions.kotlinCoroutine = "1.3.2"
+versions.lifeCycle = "2.1.0"
+ext.versions = versions
