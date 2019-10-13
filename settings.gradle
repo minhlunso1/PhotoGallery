@@ -1,2 +1,2 @@
-include ':app', ':minhimageloader'
+include ':app'
 rootProject.name='PhotoGallery'
