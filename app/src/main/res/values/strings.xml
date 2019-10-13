@@ -1,3 +1,8 @@
 <resources>
-    <string name="app_name">PhotoGallery</string>
+    <string name="app_name">PhotoGallery_Minh</string>
+    <string name="error">Error</string>
+    <string name="search">Search</string>
+    <string name="search_photo">Search photo</string>
+    <string name="transition_img" translatable="false">transition_img</string>
+    <string name="network_error">Network Error</string>
 </resources>
