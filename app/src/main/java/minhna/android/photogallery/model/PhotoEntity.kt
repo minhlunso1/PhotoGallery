@@ -4,7 +4,7 @@ import com.squareup.moshi.Json
 
 data class PhotoEntity (
     @field:Json(name="urls")
-    val urls: PhotoUrl? = null,
+    val urls: PhotoUrl = PhotoUrl(),
 
     @field:Json(name="updated_at")
     val updatedAt: String? = null,

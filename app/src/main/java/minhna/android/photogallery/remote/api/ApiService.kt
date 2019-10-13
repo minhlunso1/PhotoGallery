@@ -1,6 +1,6 @@
 package minhna.android.photogallery.remote.api
 
-import minhna.android.photogallery.app.Const
+import minhna.android.photogallery.model.Const
 import minhna.android.photogallery.model.PhotoEntity
 import minhna.android.photogallery.remote.pojo.PhotoSearchResponse
 import retrofit2.Response

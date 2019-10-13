@@ -1,4 +1,4 @@
-package minhna.android.photogallery.app
+package minhna.android.photogallery.model
 
 object Const {
     const val PER_PAGE = 60
