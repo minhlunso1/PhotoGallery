@@ -1,6 +1,5 @@
 package minhna.android.photogallery.ui.adapter
 
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.item_photo.view.*
@@ -35,7 +34,7 @@ class PhotoAdapter(private val list: ArrayList<PhotoEntity?>, private val iView:
         fun bind(list: List<PhotoEntity?>, listener: IPhoto) = with(itemView) {
 
             whenNotNull(list[adapterPosition]) {
-                ImageLoader.getInstance().displayImage(list[adapterPosition]!!.urls.regular,
+                ImageLoader.getInstance().displayImage(list[adapterPosition]!!.getUrls().getRegular(),
                     img, R.drawable.bg_dim)
 
                 itemView.setOnClickListener {

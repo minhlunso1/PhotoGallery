@@ -128,8 +128,8 @@ class BrowseFragment : BaseFragment(), IPhoto {
             val options = activity?.makeSceneTransitionAnimation(
                 Pair(view, getString(R.string.transition_img))
             )
-            DetailsActivity.launch(context!!, item.id, item.urls.regular,
-                item.description, options?.toBundle()!!)
+            DetailsActivity.launch(context!!, item.getId(), item.getUrls().getRegular(),
+                item.getDescription(), options?.toBundle()!!)
         }
     }
 

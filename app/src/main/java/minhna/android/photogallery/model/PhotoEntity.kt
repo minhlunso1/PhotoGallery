@@ -4,7 +4,7 @@ import com.squareup.moshi.Json
 
 data class PhotoEntity (
     @field:Json(name="urls")
-    val urls: PhotoUrl = PhotoUrl(),
+    private val urls: PhotoUrl?,
 
     @field:Json(name="updated_at")
     val updatedAt: String? = null,
@@ -19,10 +19,10 @@ data class PhotoEntity (
     val createdAt: String? = null,
 
     @field:Json(name="description")
-    val description: String = "",
+    private val description: String? = "",
 
     @field:Json(name="id")
-    val id: String = "",
+    private val id: String? = null,
 
     @field:Json(name="liked_by_user")
     val likedByUser: Boolean? = null,
@@ -38,4 +38,8 @@ data class PhotoEntity (
 
     @field:Json(name="exif")
     val exif: ExifEntity? = null
-)
+) {
+    fun getId() = id ?: ""
+    fun getDescription() = description ?: ""
+    fun getUrls() = urls ?: PhotoUrl()
+}

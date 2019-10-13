@@ -12,7 +12,6 @@ versions.compileSdkVersion = 29
 versions.appcompat = '1.1.0'
 versions.supportAndroidX = '1.0.0'
 versions.retrofit = "2.6.0"
-versions.kotlinMoshi = "1.8.0"
 versions.kotlinCoroutine = "1.3.2"
 versions.lifeCycle = "2.1.0"
 versions.dagger = "2.21"
@@ -41,7 +40,6 @@ pkg.coroutinesAndroid = "org.jetbrains.kotlinx:kotlinx-coroutines-android:$versi
 
 pkg.loggingInterceptor = 'com.squareup.okhttp3:logging-interceptor:3.9.1'
 pkg.retrofit = "com.squareup.retrofit2:retrofit:$versions.retrofit"
-pkg.kotlinMoshi = "com.squareup.moshi:moshi-kotlin:$versions.kotlinMoshi"
 pkg.retrofitConverterMoshi = "com.squareup.retrofit2:converter-moshi:$versions.retrofit"
 
 pkg.dagger = "com.google.dagger:dagger:$versions.dagger"

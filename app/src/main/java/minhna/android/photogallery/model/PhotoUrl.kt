@@ -7,17 +7,23 @@ const val defaultUrl = "https://cdn.dribbble.com/users/1274627/screenshots/33902
 data class PhotoUrl(
 
 	@field:Json(name="small")
-	val small: String = defaultUrl,
+	private val small: String? = defaultUrl,
 
 	@field:Json(name="thumb")
-	val thumb: String = defaultUrl,
+	private val thumb: String? = defaultUrl,
 
 	@field:Json(name="raw")
-	val raw: String = defaultUrl,
+	private val raw: String? = defaultUrl,
 
 	@field:Json(name="regular")
-	val regular: String = defaultUrl,
+	private val regular: String? = defaultUrl,
 
 	@field:Json(name="full")
-	val full: String = defaultUrl
-)
+	private val full: String? = defaultUrl
+) {
+	fun getSmall() = small ?: defaultUrl
+	fun getThumb() = thumb ?: defaultUrl
+	fun getRaw() = raw ?: defaultUrl
+	fun getRegular() = regular ?: defaultUrl
+	fun getFull() = full ?: defaultUrl
+}
