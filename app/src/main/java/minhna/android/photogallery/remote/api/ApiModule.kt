@@ -10,13 +10,14 @@ import okhttp3.*
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
+import java.net.UnknownHostException
 import java.util.concurrent.TimeUnit
 import javax.inject.Named
 import javax.inject.Singleton
 
 @Module
 class ApiModule {
-    val TIME_OUT: Long = 30
+    val TIME_OUT: Long = 20
 
     @Provides
     @Singleton
@@ -59,7 +60,7 @@ class ApiModule {
         return Interceptor { chain ->
             try {
                 chain.proceed(chain.request())
-            } catch (exception: Exception) {
+            } catch (exception: UnknownHostException) {
                 okhttp3.Response.Builder().request(chain.request())
                     .protocol(Protocol.HTTP_1_1)
                     .body(ResponseBody.create(MediaType.get("application/json"), ""))
