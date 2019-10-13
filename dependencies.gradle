@@ -41,7 +41,7 @@ pkg.retrofit = "com.squareup.retrofit2:retrofit:$versions.retrofit"
 pkg.retrofitConverterMoshi = "com.squareup.retrofit2:converter-moshi:$versions.retrofit"
 
 pkg.dagger = "com.google.dagger:dagger:$versions.dagger"
-pkg.daggerCompiler = "com.google.dagger:dagger-compiler::$versions.dagger"
+pkg.daggerCompiler = "com.google.dagger:dagger-compiler:$versions.dagger"
 
 pkg.junit = 'junit:junit:4.12'
 pkg.testRunner = 'androidx.test:runner:1.2.0'
