@@ -6,6 +6,7 @@ object Const {
     object BundleKey {
         const val ID = "id"
         const val URL = "url"
+        const val DESCRIPTION = "description"
     }
 
     object HTTP_CODE {

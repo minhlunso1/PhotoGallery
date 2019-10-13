@@ -19,10 +19,10 @@ data class PhotoEntity (
     val createdAt: String? = null,
 
     @field:Json(name="description")
-    val description: String? = null,
+    val description: String = "",
 
     @field:Json(name="id")
-    val id: String? = null,
+    val id: String = "",
 
     @field:Json(name="liked_by_user")
     val likedByUser: Boolean? = null,

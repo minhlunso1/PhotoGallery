@@ -23,7 +23,7 @@ class BrowseActivity : BaseActivity() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.main, menu)
+        menuInflater.inflate(R.menu.browse, menu)
         setupSearch(menu)
 
         return true

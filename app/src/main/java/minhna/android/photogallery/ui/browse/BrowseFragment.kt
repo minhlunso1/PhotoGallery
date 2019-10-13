@@ -17,6 +17,7 @@ import minhna.android.photogallery.model.PhotoEntity
 import minhna.android.photogallery.ui.adapter.IPhoto
 import minhna.android.photogallery.ui.adapter.PhotoAdapter
 import minhna.android.photogallery.ui.base.BaseFragment
+import minhna.android.photogallery.ui.details.DetailsActivity
 import minhna.android.photogallery.viewmodel.BrowseViewModel
 
 class BrowseFragment : BaseFragment(), IPhoto {
@@ -127,7 +128,8 @@ class BrowseFragment : BaseFragment(), IPhoto {
             val options = activity?.makeSceneTransitionAnimation(
                 Pair(view, getString(R.string.transition_img))
             )
-
+            DetailsActivity.launch(context!!, item.id, item.urls.regular,
+                item.description, options?.toBundle()!!)
         }
     }
 
