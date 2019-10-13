@@ -42,4 +42,13 @@ class ApiTest {
             assertTrue(response.body()!!.results.isNotEmpty())
         }
     }
+
+    @Test
+    fun apiPhotoDetails() {
+        runBlocking {
+            val response = appComponent.apiService().getPhotoDetails("4rDCa5hBlCs")
+            assert(response.isSuccessful && response.code() == Const.HTTP_CODE.SUCCESSFUL)
+            assertTrue(response.body() != null)
+        }
+    }
 }
