@@ -5,7 +5,7 @@ import com.squareup.moshi.Moshi
 import dagger.Module
 import dagger.Provides
 import minhna.android.photogallery.BuildConfig
-import minhna.android.photogallery.app.Const
+import minhna.android.photogallery.model.Const
 import okhttp3.*
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit

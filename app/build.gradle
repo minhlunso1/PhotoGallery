@@ -39,6 +39,8 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(path: ':minhimageloader')
+
     implementation pkg.kotlin
     implementation pkg.appcompat
     implementation pkg.recyclerView

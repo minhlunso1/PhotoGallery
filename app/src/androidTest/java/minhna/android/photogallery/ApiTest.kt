@@ -6,6 +6,7 @@ import org.junit.Assert.assertTrue
 import org.junit.Before
 import org.junit.Test
 import androidx.test.rule.ActivityTestRule
+import minhna.android.photogallery.model.Const
 import minhna.android.photogallery.ui.browse.BrowseActivity
 import org.junit.Rule
 
