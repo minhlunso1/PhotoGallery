@@ -9,6 +9,7 @@ object Const {
     }
 
     object HTTP_CODE {
+        const val SUCCESSFUL = 200
         const val TIME_OUT = 408
     }
 }

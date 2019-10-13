@@ -31,5 +31,11 @@ data class PhotoEntity (
     val height: Int? = null,
 
     @field:Json(name="likes")
-    val likes: Int? = null
+    val likes: Int? = null,
+
+    @field:Json(name="location")
+    val location: LocationEntity? = null,
+
+    @field:Json(name="exif")
+    val exif: ExifEntity? = null
 )

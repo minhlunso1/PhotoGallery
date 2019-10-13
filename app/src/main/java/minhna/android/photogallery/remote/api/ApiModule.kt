@@ -44,7 +44,7 @@ class ApiModule {
 
             val request = original.newBuilder()
                 .header("Content-Type", "application/json")
-                .header("Authorization:", "Client-ID ${BuildConfig.API_KEY}")
+                .header("Authorization", "Client-ID ${BuildConfig.API_KEY}")
                 .method(original.method(), original.body())
                 .build()
 
@@ -100,7 +100,7 @@ class ApiModule {
 
     @Provides
     @Singleton
-    fun provideApiServiceNoAuth(@Named("auth_retrofit") retrofit: Retrofit): ApiService {
+    fun provideApiService(@Named("auth_retrofit") retrofit: Retrofit): ApiService {
         if (BuildConfig.API_URL.isEmpty()) {
             throw IllegalArgumentException("Base url is empty")
         }

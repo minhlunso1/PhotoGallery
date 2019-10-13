@@ -2,7 +2,7 @@ package minhna.android.photogallery.app
 
 import android.app.Application
 
-class App : Application() {
+open class App : Application() {
     lateinit var appComponent: AppComponent
 
     override fun onCreate() {
