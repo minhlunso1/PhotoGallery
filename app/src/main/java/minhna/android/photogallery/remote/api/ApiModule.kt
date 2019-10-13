@@ -60,12 +60,18 @@ class ApiModule {
         return Interceptor { chain ->
             try {
                 chain.proceed(chain.request())
-            } catch (exception: UnknownHostException) {
+            } catch (unknownHostException: UnknownHostException) {
                 okhttp3.Response.Builder().request(chain.request())
                     .protocol(Protocol.HTTP_1_1)
                     .body(ResponseBody.create(MediaType.get("application/json"), ""))
                     .message("Network error")
                     .code(Const.HTTP_CODE.TIME_OUT)
+                    .build()
+            } catch (exception: Exception) {
+                okhttp3.Response.Builder().request(chain.request())
+                    .protocol(Protocol.HTTP_1_1)
+                    .body(ResponseBody.create(MediaType.get("application/json"), ""))
+                    .message("Error")
                     .build()
             }
         }
