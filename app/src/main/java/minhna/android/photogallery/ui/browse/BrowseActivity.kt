@@ -1,10 +1,19 @@
 package minhna.android.photogallery.ui.browse
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.View
+import androidx.appcompat.widget.SearchView
 import minhna.android.photogallery.R
+import minhna.android.photogallery.helper.obtainViewModel
+import minhna.android.photogallery.ui.base.BaseActivity
+import minhna.android.photogallery.viewmodel.BrowseViewModel
 
-class BrowseActivity : AppCompatActivity() {
+class BrowseActivity : BaseActivity() {
+
+    val viewModel: BrowseViewModel by lazy {
+        obtainViewModel(BrowseViewModel::class.java)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -14,6 +23,41 @@ class BrowseActivity : AppCompatActivity() {
                 .replace(R.id.container, BrowseFragment.newInstance())
                 .commitNow()
         }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.main, menu)
+        setupSearch(menu)
+
+        return true
+    }
+
+    private fun setupSearch(menu: Menu?) {
+        val searchViewItem = menu!!.findItem(R.id.search)
+        val searchView = searchViewItem.actionView as SearchView
+        searchView.maxWidth = Int.MAX_VALUE
+        searchView.queryHint = getString(R.string.search_photo)
+
+        val viewClose = searchView.findViewById<View>(R.id.search_close_btn)
+        viewClose.setOnClickListener {
+            searchView.onActionViewCollapsed()
+            searchViewItem.collapseActionView()
+            viewModel.searchQuery.postValue("")
+        }
+
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextChange(newText: String): Boolean {
+                return false
+            }
+
+            override fun onQueryTextSubmit(query: String): Boolean {
+                searchView.clearFocus()
+                viewModel.onChangeQuery(query)
+                viewModel.searchPhotos(query, 1)
+                return false
+            }
+
+        })
     }
 
 }

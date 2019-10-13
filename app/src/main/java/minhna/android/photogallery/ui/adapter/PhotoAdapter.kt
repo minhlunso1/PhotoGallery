@@ -11,10 +11,6 @@ import minhna.android.photogallery.helper.whenNotNull
 import minhna.android.photogallery.model.PhotoEntity
 
 class PhotoAdapter(private val list: ArrayList<PhotoEntity?>, private val iView: IPhoto): RecyclerView.Adapter<PhotoAdapter.ViewHolder>() {
-    interface IPhoto {
-        fun onItemTap(item: PhotoEntity, view: View)
-    }
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder = ViewHolder(parent, viewType)
 
     override fun getItemCount(): Int = list.size
