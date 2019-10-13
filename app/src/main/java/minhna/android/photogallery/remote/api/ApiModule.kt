@@ -17,7 +17,7 @@ import javax.inject.Singleton
 
 @Module
 class ApiModule {
-    val TIME_OUT: Long = 30
+    val TIME_OUT: Long = 20
 
     @Provides
     @Singleton
