@@ -6,14 +6,15 @@ import androidx.lifecycle.ViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
 import minhna.android.photogallery.app.AppComponent
+import minhna.android.photogallery.remote.api.ApiService
 import javax.inject.Inject
 
 abstract class BaseViewModel : ViewModel(), AppComponent.Injectable {
     val loadingStatus: MutableLiveData<Boolean> = MutableLiveData()
     val errorMsgStr: MutableLiveData<Error> = MutableLiveData()
 
-//    @Inject
-//    lateinit var apiService: ApiService
+    @Inject
+    lateinit var apiService: ApiService
     @Inject
     lateinit var application: Application
 

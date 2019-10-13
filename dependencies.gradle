@@ -15,6 +15,7 @@ versions.retrofit = "2.6.0"
 versions.kotlinCoroutine = "1.3.2"
 versions.lifeCycle = "2.1.0"
 versions.dagger = "2.21"
+versions.testAndroidX = "1.2.0"
 
 ext.versions = versions
 
@@ -44,7 +45,8 @@ pkg.dagger = "com.google.dagger:dagger:$versions.dagger"
 pkg.daggerCompiler = "com.google.dagger:dagger-compiler:$versions.dagger"
 
 pkg.junit = 'junit:junit:4.12'
-pkg.testRunner = 'androidx.test:runner:1.2.0'
+pkg.testRunner = "androidx.test:runner:$versions.testAndroidX"
+pkg.testRule = "androidx.test:rules:$versions.testAndroidX"
 pkg.espressoCore = 'androidx.test.espresso:espresso-core:3.2.0'
 
 ext.pkg = pkg
