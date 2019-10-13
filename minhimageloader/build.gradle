@@ -33,5 +33,6 @@ dependencies {
     testImplementation pkg.junit
     androidTestImplementation pkg.testRunner
     androidTestImplementation pkg.testRule
+    androidTestImplementation pkg.testExt
     androidTestImplementation pkg.espressoCore
 }
