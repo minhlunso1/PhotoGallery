@@ -39,22 +39,24 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$versions.kotlinVersion"
-    implementation "androidx.appcompat:appcompat:$versions.appcompat"
-    implementation "androidx.recyclerview:recyclerview:$versions.supportAndroidX"
-    implementation 'androidx.core:core-ktx:1.1.0'
-    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
-    implementation "androidx.lifecycle:lifecycle-extensions:$versions.lifeCycle"
-    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$versions.lifeCycle"
-    kapt "androidx.lifecycle:lifecycle-compiler:$versions.lifeCycle"
+    implementation pkg.kotlin
+    implementation pkg.appcompat
+    implementation pkg.recyclerView
+    implementation pkg.ktx
+    implementation pkg.constraintLayout
 
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$versions.kotlinCoroutine"
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$versions.kotlinCoroutine"
-    implementation 'com.squareup.okhttp3:logging-interceptor:3.9.1'
-    implementation "com.squareup.retrofit2:retrofit:$versions.retrofit"
-    implementation "com.squareup.retrofit2:converter-moshi:$versions.retrofit"
+    implementation pkg.lifecycleExt
+    implementation pkg.lifecycleViewModelKTX
+    kapt pkg.lifecycleCompiler
 
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test:runner:1.2.0'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    implementation pkg.coroutinesCore
+    implementation pkg.coroutinesAndroid
+
+    implementation pkg.loggingInterceptor
+    implementation pkg.retrofit
+    implementation pkg.retrofitConverterMoshi
+
+    testImplementation pkg.junit
+    androidTestImplementation pkg.testRunner
+    androidTestImplementation pkg.espressoCore
 }
