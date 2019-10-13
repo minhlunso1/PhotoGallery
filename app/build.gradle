@@ -56,6 +56,9 @@ dependencies {
     implementation pkg.retrofit
     implementation pkg.retrofitConverterMoshi
 
+    implementation pkg.dagger
+    kapt pkg.daggerCompiler
+
     testImplementation pkg.junit
     androidTestImplementation pkg.testRunner
     androidTestImplementation pkg.espressoCore
