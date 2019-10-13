@@ -31,7 +31,15 @@ class ApiTest {
             val response = appComponent.apiService().getPhotoList(page = 1)
             assert(response.isSuccessful && response.code() == Const.HTTP_CODE.SUCCESSFUL)
             assertTrue(response.body()!!.isNotEmpty())
-            println(response.body().toString())
+        }
+    }
+
+    @Test
+    fun apiSearch() {
+        runBlocking {
+            val response = appComponent.apiService().search(text = "nature", page = 1)
+            assert(response.isSuccessful && response.code() == Const.HTTP_CODE.SUCCESSFUL)
+            assertTrue(response.body()!!.results.isNotEmpty())
         }
     }
 }
