@@ -4,6 +4,7 @@ package minhna.android.photogallery.helper
 
 import android.app.Activity
 import android.content.Context
+import android.content.DialogInterface
 import android.content.Intent
 import android.content.res.Resources
 import android.graphics.Bitmap
@@ -16,6 +17,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.Window
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityOptionsCompat
 import androidx.core.content.ContextCompat
@@ -23,6 +25,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProviders
 import minhna.android.photogallery.BuildConfig
+import minhna.android.photogallery.R
 import minhna.android.photogallery.app.App
 import minhna.android.photogallery.app.AppFactory
 
@@ -141,4 +144,19 @@ fun Activity.makeSceneTransitionAnimation(vararg pairs: androidx.core.util.Pair<
             updatedPairs.add(androidx.core.util.Pair(navBar, Window.NAVIGATION_BAR_BACKGROUND_TRANSITION_NAME))
     }
     return ActivityOptionsCompat.makeSceneTransitionAnimation(this, *updatedPairs.toTypedArray())
+}
+
+fun View.showAlertDialogItems(title: String, items: ArrayList<String>, callbackItemTap: () -> Unit) {
+    val builder = AlertDialog.Builder(this.context)
+    with(builder)
+    {
+        setTitle(title)
+
+        val array = arrayOfNulls<String>(items.size)
+        items.toArray(array)
+        setItems(array) { dialog, which -> callbackItemTap }
+
+        setPositiveButton(context.getString(R.string.cancel)) { dialogInterface, i -> dialogInterface.cancel() }
+        show()
+    }
 }

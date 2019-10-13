@@ -12,4 +12,21 @@ data class LocationEntity(
 
 	@field:Json(name="position")
 	val position: Coordination? = null
-)
+) {
+	fun displayPlace():String {
+		var place = ""
+		if (!city.isNullOrEmpty())
+			place = city
+
+		if (!country.isNullOrEmpty()) {
+			if (country != city) {
+				if (place.isEmpty())
+					place = country
+				else
+					place += ", $country"
+			}
+		}
+
+		return place
+	}
+}

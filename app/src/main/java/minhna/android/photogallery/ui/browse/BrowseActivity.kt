@@ -10,10 +10,7 @@ import minhna.android.photogallery.ui.base.BaseActivity
 import minhna.android.photogallery.viewmodel.BrowseViewModel
 
 class BrowseActivity : BaseActivity() {
-
-    val viewModel: BrowseViewModel by lazy {
-        obtainViewModel(BrowseViewModel::class.java)
-    }
+    private lateinit var viewModel: BrowseViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,10 +23,14 @@ class BrowseActivity : BaseActivity() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.main, menu)
+        menuInflater.inflate(R.menu.browse, menu)
         setupSearch(menu)
 
         return true
+    }
+
+    override fun initViewModel() {
+        viewModel = obtainViewModel(BrowseViewModel::class.java)
     }
 
     private fun setupSearch(menu: Menu?) {
@@ -56,7 +57,6 @@ class BrowseActivity : BaseActivity() {
                 viewModel.searchPhotos(query, 1)
                 return false
             }
-
         })
     }
 

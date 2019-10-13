@@ -24,7 +24,7 @@ class ImageLoader private constructor(cacheSize: Int) {
         }
     }
 
-    fun displayImage(url: String, imageView: ImageView, placeholder: Int) {
+    fun displayImage(url: String, imageView: ImageView, placeholder: Int?) {
         val bitmap= cache.get(url)
         bitmap?.let {
             imageView.setImageBitmap(it)
@@ -32,7 +32,8 @@ class ImageLoader private constructor(cacheSize: Int) {
         }
         ?: run {
             imageView.tag = url
-            imageView.setImageResource(placeholder)
+            if (placeholder != null)
+                imageView.setImageResource(placeholder)
             addGetImageExecutor(url, GetImageExecutor(url, imageView, cache))
         }
     }
