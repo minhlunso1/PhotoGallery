@@ -4,7 +4,7 @@ import android.content.res.Resources
 import minhna.android.photogallery.R
 import minhna.android.photogallery.app.Const
 
-data class Error(val code: Int, val message: String) {
+data class Error(val code: Int = -1, val message: String) {
 
     fun getLocalizedMessage(resouces: Resources) =
         when (code) {
