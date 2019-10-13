@@ -9,18 +9,18 @@ import java.util.concurrent.Executors
 import java.util.concurrent.Future
 
 class ImageLoader private constructor(cacheSize: Int) {
-    private val cache = MemoryCache(cacheSize)
+    private var cache = MemoryCache(cacheSize)
     private val executorService = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors())
     private val mRunningDownloadList:HashMap<String,Future<Bitmap?>> = hashMapOf()
 
     companion object {
-        private val INSTANCE: ImageLoader? = null
+        private var instance: ImageLoader? = null
+
         @Synchronized
-        fun getInstance(cacheSize: Int = Setting.defaultCacheSize): ImageLoader {
-            return INSTANCE?.let { return INSTANCE }
-                ?: run {
-                    return ImageLoader(cacheSize)
-                }
+        fun getInstance(): ImageLoader {
+            if (instance == null)
+                instance = ImageLoader(Setting.defaultCacheSize)
+            return instance!!
         }
     }
 

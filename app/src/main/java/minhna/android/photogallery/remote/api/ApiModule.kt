@@ -71,6 +71,7 @@ class ApiModule {
                 okhttp3.Response.Builder().request(chain.request())
                     .protocol(Protocol.HTTP_1_1)
                     .body(ResponseBody.create(MediaType.get("application/json"), ""))
+                    .code(0)
                     .message("Error")
                     .build()
             }
