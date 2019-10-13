@@ -12,18 +12,23 @@ class DetailsViewModel : BaseViewModel() {
     val photoDetailsTask: MutableLiveData<PhotoEntity> = MutableLiveData()
 
     fun getPhotoDetails(id: String) {
-        viewModelScope.launch(coroutineContext) {
-            loadingStatus.postValue(true)
-            val response = apiService.getPhotoDetails(id)
 
-            if (response.isSuccessful) {
-                loadingStatus.postValue(false)
-                whenNotNull(response.body()) {
-                    photoDetailsTask.postValue(response.body())
+        if (photoDetailsTask.value != null)
+            photoDetailsTask.postValue(photoDetailsTask.value)
+        else {
+            viewModelScope.launch(coroutineContext) {
+                loadingStatus.postValue(true)
+                val response = apiService.getPhotoDetails(id)
+
+                if (response.isSuccessful) {
+                    loadingStatus.postValue(false)
+                    whenNotNull(response.body()) {
+                        photoDetailsTask.postValue(response.body())
+                    }
+                } else {
+                    loadingStatus.postValue(false)
+                    errorMsgStr.postValue(ErrorApi(response.code(), response.message()))
                 }
-            } else {
-                loadingStatus.postValue(false)
-                errorMsgStr.postValue(ErrorApi(response.code(), response.message()))
             }
         }
     }

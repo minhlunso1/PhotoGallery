@@ -45,8 +45,6 @@ class BrowseFragment : BaseFragment(), IPhoto {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        initViewModel()
-
         viewModel.getPhotos(page)
     }
 

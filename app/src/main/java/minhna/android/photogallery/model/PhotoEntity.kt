@@ -40,6 +40,32 @@ data class PhotoEntity (
     val exif: ExifEntity? = null
 ) {
     fun getId() = id ?: ""
+
     fun getDescription() = description ?: ""
+
     fun getUrls() = urls ?: PhotoUrl()
+
+    fun displayMetaData(): ArrayList<String> {
+        val substanceList = ArrayList<String>()
+
+        if (!description.isNullOrEmpty())
+            substanceList.add("Description: $description")
+
+        if (width != null && height != null)
+            substanceList.add("Size: ${width}x${height}")
+
+        if (exif != null) {
+            if (!exif.model.isNullOrEmpty())
+                substanceList.add("Capture with: ${exif.model}")
+            if (!exif.aperture.isNullOrEmpty())
+                substanceList.add("Aperture: ${exif.aperture}")
+            if (exif.iso != null)
+                substanceList.add("ISO: ${exif.iso}")
+        }
+
+        if (location != null && location.displayPlace().isNotEmpty())
+            substanceList.add("Place: ${location.displayPlace()}")
+
+        return substanceList
+    }
 }
