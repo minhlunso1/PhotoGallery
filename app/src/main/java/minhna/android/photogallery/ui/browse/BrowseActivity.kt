@@ -54,7 +54,6 @@ class BrowseActivity : BaseActivity() {
             override fun onQueryTextSubmit(query: String): Boolean {
                 searchView.clearFocus()
                 viewModel.onChangeQuery(query)
-                viewModel.searchPhotos(query, 1)
                 return false
             }
         })

@@ -17,9 +17,9 @@ class ImageLoader private constructor(cacheSize: Int) {
         private var instance: ImageLoader? = null
 
         @Synchronized
-        fun getInstance(): ImageLoader {
+        fun getInstance(memoryCacheSize: Int = Setting.defaultCacheSize): ImageLoader {
             if (instance == null)
-                instance = ImageLoader(Setting.defaultCacheSize)
+                instance = ImageLoader(memoryCacheSize)
             return instance!!
         }
     }

@@ -29,7 +29,6 @@ class BrowseFragment : BaseFragment(), IPhoto {
     private val photoList = ArrayList<PhotoEntity?>()
     private lateinit var photoAdapter: PhotoAdapter
     private var page = 1
-    private var searchKey = ""
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View =
@@ -37,15 +36,8 @@ class BrowseFragment : BaseFragment(), IPhoto {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        srl.setOnRefreshListener {
-            onResetData()
-        }
+        srl.setOnRefreshListener { onResetData() }
         setupList()
-    }
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel.getPhotos(page)
     }
 
     override fun initViewModel() {
@@ -65,10 +57,14 @@ class BrowseFragment : BaseFragment(), IPhoto {
             })
 
             searchQuery.observe(this@BrowseFragment, Observer {
-                searchKey = it
                 onResetData()
             })
         }
+    }
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        viewModel.executeGetData(page)
     }
 
     private fun setupList() {
@@ -90,18 +86,11 @@ class BrowseFragment : BaseFragment(), IPhoto {
 
                         if (!srl.isRefreshing) {
                             if (visibleItemCount + pastVisibleItems >= totalItemCount)
-                                executeGetData(++page)
+                                viewModel.executeGetData(++page)
                         }
                     }
                 }
             })
-        }
-    }
-
-    private fun executeGetData(page: Int) {
-        when {
-            searchKey.isEmpty() -> viewModel.getPhotos(page)
-            else -> viewModel.searchPhotos(searchKey, page)
         }
     }
 
@@ -134,7 +123,7 @@ class BrowseFragment : BaseFragment(), IPhoto {
     private fun onResetData() {
         photoAdapter.clearData()
         page = 1
-        executeGetData(page)
+        viewModel.executeGetData(page)
     }
 }
 

@@ -34,7 +34,7 @@ class PhotoAdapter(private val list: ArrayList<PhotoEntity?>, private val iView:
         fun bind(list: List<PhotoEntity?>, listener: IPhoto) = with(itemView) {
 
             whenNotNull(list[adapterPosition]) {
-                ImageLoader.getInstance().displayImage(list[adapterPosition]!!.getUrls().getRegular(),
+                ImageLoader.getInstance().displayImage(list[adapterPosition]!!.getUrls().getSmall(),
                     img, R.drawable.bg_dim)
 
                 itemView.setOnClickListener {

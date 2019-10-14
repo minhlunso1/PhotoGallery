@@ -14,7 +14,15 @@ class BrowseViewModel : BaseViewModel() {
     val searchQuery: MutableLiveData<String> = MutableLiveData()
     lateinit var currentJob: Job
 
-    fun getPhotos(page: Int) {
+    fun executeGetData(page: Int) {
+        val query = searchQuery.value
+        when {
+            query.isNullOrEmpty() -> getPhotos(page)
+            else -> searchPhotos(query, page)
+        }
+    }
+
+    private fun getPhotos(page: Int) {
         currentJob = viewModelScope.launch(coroutineContext) {
             loadingStatus.postValue(true)
             val response = apiService.getPhotoList(page = page)
@@ -31,8 +39,8 @@ class BrowseViewModel : BaseViewModel() {
         }
     }
 
-    fun searchPhotos(query: String, page: Int) {
-        viewModelScope.launch(coroutineContext) {
+    private fun searchPhotos(query: String, page: Int) {
+        currentJob = viewModelScope.launch(coroutineContext) {
             loadingStatus.postValue(true)
             val response = apiService.search(text = query, page = page)
 

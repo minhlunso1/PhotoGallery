@@ -6,6 +6,7 @@ import android.os.Handler
 import android.os.Looper
 import android.widget.ImageView
 import minhna.android.minhimageloader.cache.MemoryCache
+import minhna.android.minhimageloader.cache.Setting
 import java.net.HttpURLConnection
 import java.net.URL
 
@@ -17,9 +18,10 @@ class GetImageExecutor<T>(private val url: String, private val imageView: ImageV
     override fun download(url: String): Bitmap? {
         var bitmap: Bitmap? = null
         try {
-            val url = URL(url)
-            val conn: HttpURLConnection = url.openConnection() as HttpURLConnection
-            bitmap = BitmapFactory.decodeStream(conn.inputStream)
+            val urlToLoad= URL(url)
+            val conn: HttpURLConnection = urlToLoad.openConnection() as HttpURLConnection
+            if (conn.inputStream.available() <= Setting.maxMemory)
+                bitmap = BitmapFactory.decodeStream(conn.inputStream)
             conn.disconnect()
         } catch (e: Exception) {
             e.printStackTrace()
