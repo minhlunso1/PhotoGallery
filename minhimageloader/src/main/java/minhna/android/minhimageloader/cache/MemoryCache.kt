@@ -5,7 +5,7 @@ import android.util.LruCache
 
 /**
  * @property newMaxSize
- * If the cache size specified @param newMaxSize larger than the memory of JVM,
+ * If the cache size specified @param newMaxSize (byte) larger than the memory of JVM,
  * set it to the default cache size.
  */
 class MemoryCache (newMaxSize: Int) {
@@ -19,9 +19,7 @@ class MemoryCache (newMaxSize: Int) {
             newMaxSize
 
         cache = object : LruCache<String, Bitmap>(cacheSize) {
-          override fun sizeOf(key: String, value: Bitmap): Int {
-              return (value.rowBytes) * (value.height) / 1024
-          }
+          override fun sizeOf(key: String, value: Bitmap): Int = value.rowBytes * value.height
       }
     }
 

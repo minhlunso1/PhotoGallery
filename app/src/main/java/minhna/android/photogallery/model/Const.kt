@@ -1,7 +1,7 @@
 package minhna.android.photogallery.model
 
 object Const {
-    const val PER_PAGE = 60
+    const val PER_PAGE = 50
 
     object BundleKey {
         const val ID = "id"
