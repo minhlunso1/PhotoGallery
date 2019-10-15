@@ -23,6 +23,8 @@ Photo Gallery app based on the requirements below.
 ## Optional extras
 
 * [x] Search for image
+
+    Let's hit the search button on your soft-keyboard
 * [x] Image caching
 
     Memory cache feature in [MinhImageLoader](https://github.com/minhlunso1/PhotoGallery/tree/master/minhimageloader) module
