@@ -1,0 +1,6 @@
+$dokka.format:html
+$dokka.linkExtension:html
+
+minhna.android.minhimageloader
+minhna.android.minhimageloader.cache
+minhna.android.minhimageloader.remote

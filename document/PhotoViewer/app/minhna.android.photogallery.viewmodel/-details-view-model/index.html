@@ -1,0 +1,107 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>DetailsViewModel - app</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">app</a>&nbsp;/&nbsp;<a href="../index.html">minhna.android.photogallery.viewmodel</a>&nbsp;/&nbsp;<a href="./index.html">DetailsViewModel</a><br/>
+<br/>
+<h1>DetailsViewModel</h1>
+<code><span class="keyword">class </span><span class="identifier">DetailsViewModel</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../minhna.android.photogallery.viewmodel.base/-base-view-model/index.html"><span class="identifier">BaseViewModel</span></a></code>
+<p>Photo details controller.</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">DetailsViewModel</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>Photo details controller.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="photo-details-task.html">photoDetailsTask</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">photoDetailsTask</span><span class="symbol">: </span><span class="identifier">MutableLiveData</span><span class="symbol">&lt;</span><a href="../../minhna.android.photogallery.model/-photo-entity/index.html"><span class="identifier">PhotoEntity</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../minhna.android.photogallery.viewmodel.base/-base-view-model/api-service.html">apiService</a></p>
+</td>
+<td>
+<code><span class="keyword">lateinit</span> <span class="keyword">var </span><span class="identifier">apiService</span><span class="symbol">: </span><a href="../../minhna.android.photogallery.remote.api/-api-service/index.html"><span class="identifier">ApiService</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../minhna.android.photogallery.viewmodel.base/-base-view-model/application.html">application</a></p>
+</td>
+<td>
+<code><span class="keyword">lateinit</span> <span class="keyword">var </span><span class="identifier">application</span><span class="symbol">: </span><a href="https://developer.android.com/reference/android/app/Application.html"><span class="identifier">Application</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../minhna.android.photogallery.viewmodel.base/-base-view-model/coroutine-context.html">coroutineContext</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">coroutineContext</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.coroutines/-coroutine-context/index.html"><span class="identifier">CoroutineContext</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../minhna.android.photogallery.viewmodel.base/-base-view-model/error-msg-str.html">errorMsgStr</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">errorMsgStr</span><span class="symbol">: </span><span class="identifier">MutableLiveData</span><span class="symbol">&lt;</span><a href="../../minhna.android.photogallery.remote.pojo/-error-api/index.html"><span class="identifier">ErrorApi</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../minhna.android.photogallery.viewmodel.base/-base-view-model/loading-status.html">loadingStatus</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">loadingStatus</span><span class="symbol">: </span><span class="identifier">MutableLiveData</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-photo-details.html">getPhotoDetails</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">getPhotoDetails</span><span class="symbol">(</span><span class="identifier" id="minhna.android.photogallery.viewmodel.DetailsViewModel$getPhotoDetails(kotlin.String)/id">id</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Get metadata from photo api.
+Single loading.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../minhna.android.photogallery.viewmodel.base/-base-view-model/inject.html">inject</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">inject</span><span class="symbol">(</span><span class="identifier" id="minhna.android.photogallery.viewmodel.base.BaseViewModel$inject(minhna.android.photogallery.app.AppComponent)/appComponent">appComponent</span><span class="symbol">:</span>&nbsp;<a href="../../minhna.android.photogallery.app/-app-component/index.html"><span class="identifier">AppComponent</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

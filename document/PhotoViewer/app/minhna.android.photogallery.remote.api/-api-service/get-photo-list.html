@@ -1,0 +1,21 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ApiService.getPhotoList - app</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">app</a>&nbsp;/&nbsp;<a href="../index.html">minhna.android.photogallery.remote.api</a>&nbsp;/&nbsp;<a href="index.html">ApiService</a>&nbsp;/&nbsp;<a href="./get-photo-list.html">getPhotoList</a><br/>
+<br/>
+<h1>getPhotoList</h1>
+<a name="minhna.android.photogallery.remote.api.ApiService$getPhotoList(kotlin.Int, kotlin.Int)"></a>
+<code><span class="identifier">@GET</span><span class="symbol">(</span>"photos"<span class="symbol">)</span> <span class="keyword">abstract</span> <span class="keyword">suspend</span> <span class="keyword">fun </span><span class="identifier">getPhotoList</span><span class="symbol">(</span><span class="identifier">@Query</span><span class="symbol">(</span>"per_page"<span class="symbol">)</span> <span class="identifier" id="minhna.android.photogallery.remote.api.ApiService$getPhotoList(kotlin.Int, kotlin.Int)/perPage">perPage</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a>&nbsp;<span class="symbol">=</span>&nbsp;Const.PER_PAGE<span class="symbol">, </span><span class="identifier">@Query</span><span class="symbol">(</span>"page"<span class="symbol">)</span> <span class="identifier" id="minhna.android.photogallery.remote.api.ApiService$getPhotoList(kotlin.Int, kotlin.Int)/page">page</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Response</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="../../minhna.android.photogallery.model/-photo-entity/index.html"><span class="identifier">PhotoEntity</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span></code>
+<h3>Parameters</h3>
+<p><a name="perPage"></a>
+<code>perPage</code> - Number of items per page.</p>
+<p><a name="page"></a>
+<code>page</code> - Page number to retrieve.</p>
+<p><strong>Return</strong><br/>
+Get a single page from the list of all photos.</p>
+</BODY>
+</HTML>

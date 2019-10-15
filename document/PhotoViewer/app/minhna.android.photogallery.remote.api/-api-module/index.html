@@ -1,0 +1,110 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ApiModule - app</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">app</a>&nbsp;/&nbsp;<a href="../index.html">minhna.android.photogallery.remote.api</a>&nbsp;/&nbsp;<a href="./index.html">ApiModule</a><br/>
+<br/>
+<h1>ApiModule</h1>
+<code><span class="keyword">class </span><span class="identifier">ApiModule</span></code>
+<p>Build and get instance of net interaction module from this class.
+Injectable with dagger.
+Retrofit is considered as Android base tool component for remote service.</p>
+<p><strong>See Also</strong><br/>
+<p><a href="#">https</a></p>
+</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">ApiModule</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>Build and get instance of net interaction module from this class.
+Injectable with dagger.
+Retrofit is considered as Android base tool component for remote service.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-t-i-m-e_-o-u-t.html">TIME_OUT</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">TIME_OUT</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="provide-api-service.html">provideApiService</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">provideApiService</span><span class="symbol">(</span><span class="identifier" id="minhna.android.photogallery.remote.api.ApiModule$provideApiService(retrofit2.Retrofit)/retrofit">retrofit</span><span class="symbol">:</span>&nbsp;<span class="identifier">Retrofit</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-api-service/index.html"><span class="identifier">ApiService</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="provide-auth-ok-http-client.html">provideAuthOkHttpClient</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">provideAuthOkHttpClient</span><span class="symbol">(</span><span class="identifier" id="minhna.android.photogallery.remote.api.ApiModule$provideAuthOkHttpClient(okhttp3.Cache, okhttp3.Interceptor, okhttp3.Interceptor, okhttp3.Interceptor)/cache">cache</span><span class="symbol">:</span>&nbsp;<span class="identifier">Cache</span><span class="symbol">, </span><span class="identifier" id="minhna.android.photogallery.remote.api.ApiModule$provideAuthOkHttpClient(okhttp3.Cache, okhttp3.Interceptor, okhttp3.Interceptor, okhttp3.Interceptor)/logger">logger</span><span class="symbol">:</span>&nbsp;<span class="identifier">Interceptor</span><span class="symbol">, </span><span class="identifier" id="minhna.android.photogallery.remote.api.ApiModule$provideAuthOkHttpClient(okhttp3.Cache, okhttp3.Interceptor, okhttp3.Interceptor, okhttp3.Interceptor)/jsonInterceptor">jsonInterceptor</span><span class="symbol">:</span>&nbsp;<span class="identifier">Interceptor</span><span class="symbol">, </span><span class="identifier" id="minhna.android.photogallery.remote.api.ApiModule$provideAuthOkHttpClient(okhttp3.Cache, okhttp3.Interceptor, okhttp3.Interceptor, okhttp3.Interceptor)/networkInterceptor">networkInterceptor</span><span class="symbol">:</span>&nbsp;<span class="identifier">Interceptor</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">OkHttpClient</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="provide-auth-retrofit.html">provideAuthRetrofit</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">provideAuthRetrofit</span><span class="symbol">(</span><span class="identifier" id="minhna.android.photogallery.remote.api.ApiModule$provideAuthRetrofit(okhttp3.OkHttpClient)/okHttpClient">okHttpClient</span><span class="symbol">:</span>&nbsp;<span class="identifier">OkHttpClient</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Retrofit</span></code>
+<p>Retrofit with Moshi convert adapter.
+Moshi for parsing model object.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="provide-connection-interceptor.html">provideConnectionInterceptor</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">provideConnectionInterceptor</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Interceptor</span></code>
+<p>Interceptor for solving different kinds of network errors</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="provide-header-interceptor.html">provideHeaderInterceptor</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">provideHeaderInterceptor</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Interceptor</span></code>
+<p>Header request with json type and authorization for all api calls.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="provide-logger-interceptor.html">provideLoggerInterceptor</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">provideLoggerInterceptor</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Interceptor</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="provide-ok-http-cache.html">provideOkHttpCache</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">provideOkHttpCache</span><span class="symbol">(</span><span class="identifier" id="minhna.android.photogallery.remote.api.ApiModule$provideOkHttpCache(android.app.Application)/application">application</span><span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/app/Application.html"><span class="identifier">Application</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Cache</span></code>
+<p>Http cache for request header</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

@@ -1,0 +1,39 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ApiService - app</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">app</a>&nbsp;/&nbsp;<a href="../index.html">minhna.android.photogallery.remote.api</a>&nbsp;/&nbsp;<a href="./index.html">ApiService</a><br/>
+<br/>
+<h1>ApiService</h1>
+<code><span class="keyword">interface </span><span class="identifier">ApiService</span></code>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-photo-details.html">getPhotoDetails</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">suspend</span> <span class="keyword">fun </span><span class="identifier">getPhotoDetails</span><span class="symbol">(</span><span class="identifier" id="minhna.android.photogallery.remote.api.ApiService$getPhotoDetails(kotlin.String)/id">id</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Response</span><span class="symbol">&lt;</span><a href="../../minhna.android.photogallery.model/-photo-entity/index.html"><span class="identifier">PhotoEntity</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-photo-list.html">getPhotoList</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">suspend</span> <span class="keyword">fun </span><span class="identifier">getPhotoList</span><span class="symbol">(</span><span class="identifier" id="minhna.android.photogallery.remote.api.ApiService$getPhotoList(kotlin.Int, kotlin.Int)/perPage">perPage</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a>&nbsp;<span class="symbol">=</span>&nbsp;Const.PER_PAGE<span class="symbol">, </span><span class="identifier" id="minhna.android.photogallery.remote.api.ApiService$getPhotoList(kotlin.Int, kotlin.Int)/page">page</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Response</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="../../minhna.android.photogallery.model/-photo-entity/index.html"><span class="identifier">PhotoEntity</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="search.html">search</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">suspend</span> <span class="keyword">fun </span><span class="identifier">search</span><span class="symbol">(</span><span class="identifier" id="minhna.android.photogallery.remote.api.ApiService$search(kotlin.String, kotlin.Int, kotlin.Int)/text">text</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span>&nbsp;<span class="symbol">=</span>&nbsp;null<span class="symbol">, </span><span class="identifier" id="minhna.android.photogallery.remote.api.ApiService$search(kotlin.String, kotlin.Int, kotlin.Int)/perPage">perPage</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a>&nbsp;<span class="symbol">=</span>&nbsp;Const.PER_PAGE<span class="symbol">, </span><span class="identifier" id="minhna.android.photogallery.remote.api.ApiService$search(kotlin.String, kotlin.Int, kotlin.Int)/page">page</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Response</span><span class="symbol">&lt;</span><a href="../../minhna.android.photogallery.remote.pojo/-photo-search-response/index.html"><span class="identifier">PhotoSearchResponse</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

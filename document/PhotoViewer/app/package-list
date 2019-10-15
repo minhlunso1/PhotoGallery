@@ -1,0 +1,32 @@
+$dokka.format:html
+$dokka.linkExtension:html
+$dokka.location:minhna.android.photogallery.helper$dpToPx(android.content.Context, kotlin.Float)minhna.android.photogallery.helper/android.content.-context/dp-to-px.html
+$dokka.location:minhna.android.photogallery.helper$dpToPx(android.view.View, kotlin.Float)minhna.android.photogallery.helper/android.view.-view/dp-to-px.html
+$dokka.location:minhna.android.photogallery.helper$get(android.view.ViewGroup, kotlin.Int)minhna.android.photogallery.helper/android.view.-view-group/get.html
+$dokka.location:minhna.android.photogallery.helper$getAppCompatDrawable(androidx.appcompat.app.AppCompatActivity, kotlin.Int)minhna.android.photogallery.helper/androidx.appcompat.app.-app-compat-activity/get-app-compat-drawable.html
+$dokka.location:minhna.android.photogallery.helper$getBitmap(android.content.Context, kotlin.Int)minhna.android.photogallery.helper/android.content.-context/get-bitmap.html
+$dokka.location:minhna.android.photogallery.helper$getDrawable(android.content.Context, kotlin.Int)minhna.android.photogallery.helper/android.content.-context/get-drawable.html
+$dokka.location:minhna.android.photogallery.helper$inflate(android.view.ViewGroup, kotlin.Int, kotlin.Boolean)minhna.android.photogallery.helper/android.view.-view-group/inflate.html
+$dokka.location:minhna.android.photogallery.helper$launchActivity(android.app.Activity, kotlin.Function1((android.content.Intent, kotlin.Unit)), kotlin.Boolean)minhna.android.photogallery.helper/android.app.-activity/launch-activity.html
+$dokka.location:minhna.android.photogallery.helper$launchActivity(android.content.Context, kotlin.Function1((android.content.Intent, kotlin.Unit)))minhna.android.photogallery.helper/android.content.-context/launch-activity.html
+$dokka.location:minhna.android.photogallery.helper$launchActivityForResult(android.app.Activity, kotlin.Int, kotlin.Function1((android.content.Intent, kotlin.Unit)))minhna.android.photogallery.helper/android.app.-activity/launch-activity-for-result.html
+$dokka.location:minhna.android.photogallery.helper$layoutParams(android.view.View, kotlin.Function1((minhna.android.photogallery.helper.layoutParams.T, kotlin.Unit)))minhna.android.photogallery.helper/android.view.-view/layout-params.html
+$dokka.location:minhna.android.photogallery.helper$log(kotlin.String, kotlin.String)minhna.android.photogallery.helper/kotlin.-string/log.html
+$dokka.location:minhna.android.photogallery.helper$makeSceneTransitionAnimation(android.app.Activity, kotlin.Array((androidx.core.util.Pair((android.view.View, kotlin.String)))))minhna.android.photogallery.helper/android.app.-activity/make-scene-transition-animation.html
+$dokka.location:minhna.android.photogallery.helper$margin(android.view.View, kotlin.Float, kotlin.Float, kotlin.Float, kotlin.Float)minhna.android.photogallery.helper/android.view.-view/margin.html
+$dokka.location:minhna.android.photogallery.helper$obtainViewModel(androidx.appcompat.app.AppCompatActivity, java.lang.Class((minhna.android.photogallery.helper.obtainViewModel.T)))minhna.android.photogallery.helper/androidx.appcompat.app.-app-compat-activity/obtain-view-model.html
+$dokka.location:minhna.android.photogallery.helper$obtainViewModel(androidx.fragment.app.Fragment, java.lang.Class((minhna.android.photogallery.helper.obtainViewModel.T)))minhna.android.photogallery.helper/androidx.fragment.app.-fragment/obtain-view-model.html
+$dokka.location:minhna.android.photogallery.helper$obtainViewModel(androidx.fragment.app.Fragment, java.lang.Class((minhna.android.photogallery.helper.obtainViewModel.T)), kotlin.Boolean)minhna.android.photogallery.helper/androidx.fragment.app.-fragment/obtain-view-model.html
+$dokka.location:minhna.android.photogallery.helper$showAlertDialogItems(android.view.View, kotlin.String, java.util.ArrayList((kotlin.String)), kotlin.Function0((kotlin.Unit)))minhna.android.photogallery.helper/android.view.-view/show-alert-dialog-items.html
+$dokka.location:minhna.android.photogallery.helper$toast(android.content.Context, kotlin.CharSequence)minhna.android.photogallery.helper/android.content.-context/toast.html
+minhna.android.photogallery.app
+minhna.android.photogallery.helper
+minhna.android.photogallery.model
+minhna.android.photogallery.remote.api
+minhna.android.photogallery.remote.pojo
+minhna.android.photogallery.ui.adapter
+minhna.android.photogallery.ui.base
+minhna.android.photogallery.ui.browse
+minhna.android.photogallery.ui.details
+minhna.android.photogallery.viewmodel
+minhna.android.photogallery.viewmodel.base

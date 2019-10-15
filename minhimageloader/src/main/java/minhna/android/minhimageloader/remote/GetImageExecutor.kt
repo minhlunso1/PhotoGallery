@@ -13,12 +13,13 @@ import java.net.URL
 class GetImageExecutor<T>(private val url: String, private val imageView: ImageView,
                        private val cache: MemoryCache): DownloadTask<Bitmap?>() {
 
+    //to interact with UI thread
     private val uiHandler = Handler(Looper.getMainLooper())
 
     override fun download(url: String): Bitmap? {
         var bitmap: Bitmap? = null
         try {
-            val urlToLoad= URL(url)
+            val urlToLoad = URL(url)
             val conn: HttpURLConnection = urlToLoad.openConnection() as HttpURLConnection
             if (conn.inputStream.available() <= Setting.maxMemory)
                 bitmap = BitmapFactory.decodeStream(conn.inputStream)
@@ -29,6 +30,11 @@ class GetImageExecutor<T>(private val url: String, private val imageView: ImageV
         return bitmap
     }
 
+    /**
+     * Callback of bitmap processing done.
+     * Throw an event update image view.
+     * Caching process.
+     */
     override fun call(): Bitmap? {
         val bitmap = download(url)
         bitmap?.let {

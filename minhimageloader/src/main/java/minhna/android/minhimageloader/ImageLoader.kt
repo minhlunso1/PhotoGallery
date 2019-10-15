@@ -8,6 +8,10 @@ import minhna.android.minhimageloader.remote.GetImageExecutor
 import java.util.concurrent.Executors
 import java.util.concurrent.Future
 
+/**
+ * Image loader module presenter
+ * @param cacheSize The desirable cache size.
+ */
 class ImageLoader private constructor(cacheSize: Int) {
     private var cache = MemoryCache(cacheSize)
     private val executorService = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors())
@@ -24,6 +28,12 @@ class ImageLoader private constructor(cacheSize: Int) {
         }
     }
 
+    /**
+     * Load uri into ImageView.
+     * @param url The image uri.
+     * @param imageView The ImageView display.
+     * @param placeholder The placeholder display for image uri pre-fetch.
+     */
     fun displayImage(url: String, imageView: ImageView, placeholder: Int?) {
         val bitmap= cache.get(url)
         bitmap?.let {
@@ -38,10 +48,12 @@ class ImageLoader private constructor(cacheSize: Int) {
         }
     }
 
+    /**
+     * Deliver task of each image loading.
+     */
     private fun addGetImageExecutor(url: String, task: GetImageExecutor<Bitmap?>) {
         mRunningDownloadList[url] = executorService.submit(task)
     }
-
 
     fun clearCache() {
         cache.evict()
