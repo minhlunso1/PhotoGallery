@@ -80,8 +80,14 @@ class DetailsActivity: BaseActivity() {
     }
 
     private fun setupActionBar(title: String?) {
-        supportActionBar?.title = title
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        var textTitle = title
+        supportActionBar?.apply {
+            if (textTitle.isNullOrEmpty())
+                textTitle = getString(R.string.details_photo)
+            this.title = textTitle
+
+            setDisplayHomeAsUpEnabled(true)
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
