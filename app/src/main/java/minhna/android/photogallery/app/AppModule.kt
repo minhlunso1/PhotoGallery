@@ -5,6 +5,10 @@ import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
 
+/**
+ * @param application Provide this as an application instance.
+ * Injectable with dagger.
+ */
 @Module
 class AppModule(private val application: Application) {
     @Provides

@@ -15,6 +15,11 @@ import minhna.android.photogallery.model.Const
 import minhna.android.photogallery.ui.base.BaseActivity
 import minhna.android.photogallery.viewmodel.DetailsViewModel
 
+/**
+ * MVVM DetailsActivity as View interacts with DetailsViewModel.
+ * Show photo.
+ * Show metadata view trigger.
+ */
 class DetailsActivity: BaseActivity() {
     private lateinit var viewModel: DetailsViewModel
     private var photoId = ""
@@ -39,6 +44,7 @@ class DetailsActivity: BaseActivity() {
 
             setupActionBar(it.getStringExtra(Const.BundleKey.DESCRIPTION))
 
+            //Expect to get a regular size image url or higher for quality display
             val url = it.getStringExtra(Const.BundleKey.URL)
             if (!url.isNullOrEmpty())
                 loadImage(url)
@@ -66,6 +72,9 @@ class DetailsActivity: BaseActivity() {
         }
     }
 
+    /**
+     * Show photo.
+     */
     private fun loadImage(imgUrl: String) {
         ImageLoader.getInstance().displayImage(imgUrl, img, null)
     }

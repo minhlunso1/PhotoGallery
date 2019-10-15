@@ -9,7 +9,12 @@ import minhna.android.photogallery.helper.obtainViewModel
 import minhna.android.photogallery.ui.base.BaseActivity
 import minhna.android.photogallery.viewmodel.BrowseViewModel
 
+/**
+ * MVVM BrowseActivity as View interacts with BrowseViewModel.
+ * Search event view trigger.
+ */
 class BrowseActivity : BaseActivity() {
+    //View interaction with Fragment via ViewModel.
     private lateinit var viewModel: BrowseViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {

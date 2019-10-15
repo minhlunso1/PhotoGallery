@@ -20,6 +20,10 @@ import minhna.android.photogallery.ui.base.BaseFragment
 import minhna.android.photogallery.ui.details.DetailsActivity
 import minhna.android.photogallery.viewmodel.BrowseViewModel
 
+/**
+ * MVVM BrowseFragment as View interacts with BrowseViewModel.
+ * Get photo list event view trigger.
+ */
 class BrowseFragment : BaseFragment(), IPhoto {
     companion object {
         fun newInstance() = BrowseFragment()
@@ -112,6 +116,7 @@ class BrowseFragment : BaseFragment(), IPhoto {
 
     override fun onItemTap(item: PhotoEntity, view: View) {
         whenNotNull(context) {
+            //tags for transition animation
             val options = activity?.makeSceneTransitionAnimation(
                 Pair(view, getString(R.string.transition_img))
             )

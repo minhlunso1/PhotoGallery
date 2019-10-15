@@ -8,11 +8,18 @@ import minhna.android.photogallery.model.PhotoEntity
 import minhna.android.photogallery.remote.pojo.ErrorApi
 import minhna.android.photogallery.viewmodel.base.BaseViewModel
 
+/**
+ * Photo details controller.
+ */
 class DetailsViewModel : BaseViewModel() {
     val photoDetailsTask: MutableLiveData<PhotoEntity> = MutableLiveData()
 
+    /**
+     * Get metadata from photo api.
+     * Single loading.
+     */
     fun getPhotoDetails(id: String) {
-
+        //Only load api once.
         if (photoDetailsTask.value != null)
             photoDetailsTask.postValue(photoDetailsTask.value)
         else {

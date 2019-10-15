@@ -18,6 +18,11 @@ class PhotoAdapter(private val list: ArrayList<PhotoEntity?>, private val iView:
         holder.bind(list, iView)
     }
 
+    /**
+     * Add new objects to existing list.
+     * Notify and update list view.
+     * @param newList The list contains of new objects.
+     */
     fun addData(newList: List<PhotoEntity?>) {
         val size = list.size
         list.addAll(newList)
@@ -25,6 +30,10 @@ class PhotoAdapter(private val list: ArrayList<PhotoEntity?>, private val iView:
         notifyItemRangeChanged(size, sizeNew)
     }
 
+    /**
+     * Clear all data of existing list.
+     * Notify and update list view.
+     */
     fun clearData() {
         list.clear()
         notifyDataSetChanged()
@@ -34,6 +43,7 @@ class PhotoAdapter(private val list: ArrayList<PhotoEntity?>, private val iView:
         fun bind(list: List<PhotoEntity?>, listener: IPhoto) = with(itemView) {
 
             whenNotNull(list[adapterPosition]) {
+                //load image small sizes for efficient in loading list
                 ImageLoader.getInstance().displayImage(list[adapterPosition]!!.getUrls().getSmall(),
                     img, R.drawable.bg_dim)
 

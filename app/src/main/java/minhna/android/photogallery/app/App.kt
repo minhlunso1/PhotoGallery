@@ -2,6 +2,9 @@ package minhna.android.photogallery.app
 
 import android.app.Application
 
+/**
+ * Apply dagger injection for getting single instance modules.
+ */
 open class App : Application() {
     lateinit var appComponent: AppComponent
 

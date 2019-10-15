@@ -9,6 +9,9 @@ import minhna.android.photogallery.model.PhotoEntity
 import minhna.android.photogallery.remote.pojo.ErrorApi
 import minhna.android.photogallery.viewmodel.base.BaseViewModel
 
+/**
+ * Search and get photos controller
+ */
 class BrowseViewModel : BaseViewModel() {
     val taskCompleted: MutableLiveData<List<PhotoEntity?>> = MutableLiveData()
     val searchQuery: MutableLiveData<String> = MutableLiveData()

@@ -7,6 +7,9 @@ import minhna.android.photogallery.remote.api.ApiService
 import minhna.android.photogallery.viewmodel.base.BaseViewModel
 import javax.inject.Singleton
 
+/**
+ * Define which types of modules could be used and the target usage.
+ */
 @Singleton
 @Component(modules = [(AppModule::class), (ApiModule::class)])
 interface AppComponent {
@@ -18,7 +21,7 @@ interface AppComponent {
         fun inject(appComponent: AppComponent)
     }
 
+    //Declare the targets here
     fun inject(app: App)
-
     fun inject(viewModel: BaseViewModel)
 }

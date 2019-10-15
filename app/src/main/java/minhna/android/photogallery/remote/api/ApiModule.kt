@@ -15,10 +15,20 @@ import java.util.concurrent.TimeUnit
 import javax.inject.Named
 import javax.inject.Singleton
 
+/**
+ * Build and get instance of net interaction module from this class.
+ * Injectable with dagger.
+ * Retrofit is considered as Android base tool component for remote service.
+ * @see https://developer.android.com/jetpack/docs/guide#overview
+ */
 @Module
 class ApiModule {
     val TIME_OUT: Long = 20
 
+    /**
+     * Http cache for request header
+     * @param application Provided by AppModule
+     */
     @Provides
     @Singleton
     fun provideOkHttpCache(application: Application): Cache {
@@ -36,6 +46,9 @@ class ApiModule {
         return logger
     }
 
+    /**
+     * Header request with json type and authorization for all api calls.
+     */
     @Provides
     @Singleton
     @Named("header")
@@ -53,6 +66,9 @@ class ApiModule {
         }
     }
 
+    /**
+     * Interceptor for solving different kinds of network errors
+     */
     @Provides
     @Singleton
     @Named("connectionError")
@@ -94,6 +110,10 @@ class ApiModule {
             .build()
     }
 
+    /**
+     * Retrofit with Moshi convert adapter.
+     * Moshi for parsing model object.
+     */
     @Provides
     @Singleton
     @Named("auth_retrofit")
