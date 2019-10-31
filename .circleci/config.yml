@@ -36,26 +36,26 @@ jobs:
           environment:
             TERM: dumb
 
-            - run:
-                name: Start emulator
-                command: /opt/android-sdk-linux/emulator/emulator -avd testEmulator -no-audio -no-window
-                background: true
-                environment:
-                  TERM: dumb
+      - run:
+          name: Start emulator
+          command: /opt/android-sdk-linux/emulator/emulator -avd testEmulator -no-audio -no-window
+          background: true
+          environment:
+            TERM: dumb
 
-            - checkout
+      - checkout
 
-            - run:
-                name: Wait for emulator
-                command: ./android-wait-for-boot.sh
-                environment:
-                  TERM: dumb
+      - run:
+          name: Wait for emulator
+          command: ./android-wait-for-boot.sh
+          environment:
+            TERM: dumb
 
-            - run:
-                name: Remove lock screen
-                command: adb shell input keyevent 82
-                environment:
-                  TERM: dumb
+      - run:
+          name: Remove lock screen
+          command: adb shell input keyevent 82
+          environment:
+            TERM: dumb
       - run:
           name: Run PhotoGallery Instrumental test
           command: ./gradlew connectedAndroidTest
