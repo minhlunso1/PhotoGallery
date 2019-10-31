@@ -10,6 +10,7 @@ import minhna.android.photogallery.helper.whenNotNull
 import minhna.android.photogallery.model.PhotoEntity
 
 class PhotoAdapter(private val list: ArrayList<PhotoEntity?>, private val iView: IPhoto): RecyclerView.Adapter<PhotoAdapter.ViewHolder>() {
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder = ViewHolder(parent, viewType)
 
     override fun getItemCount(): Int = list.size
@@ -50,6 +51,7 @@ class PhotoAdapter(private val list: ArrayList<PhotoEntity?>, private val iView:
                 itemView.setOnClickListener {
                     listener.onItemTap(list[adapterPosition]!!, it)
                 }
+
             }
         }
     }

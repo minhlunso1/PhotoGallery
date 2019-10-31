@@ -37,7 +37,9 @@ data class PhotoEntity (
     val location: LocationEntity? = null,
 
     @field:Json(name="exif")
-    val exif: ExifEntity? = null
+    val exif: ExifEntity? = null,
+
+    var isFavorite: Boolean = false
 ) {
     fun getId() = id ?: ""
 

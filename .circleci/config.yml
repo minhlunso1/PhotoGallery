@@ -23,6 +23,18 @@ jobs:
       - run:
           name: Run Tests
           command: ./gradlew lint test
+       - run:
+       name: Run PhotoGallery Unit Test
+       command: ./gradlew test
+      - run:
+          name: Run MinhImageLoader Unit Test
+          command: ./gradlew :minhimageloader:test
+       - run:
+         name: Run PhotoGallery Instrumental test
+         command: ./gradlew connectedAndroidTest
+      - run:
+          name: Run MinhImageLoader Instrumental test
+          command: ./gradlew :minhimageloader:connectedAndroidTest
       - store_artifacts: # for display in Artifacts: https://circleci.com/docs/2.0/artifacts/ 
           path: app/build/reports
           destination: reports
