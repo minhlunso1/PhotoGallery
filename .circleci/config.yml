@@ -30,12 +30,21 @@ jobs:
           name: Run MinhImageLoader Unit Test
           command: ./gradlew :minhimageloader:test
       - run:
-          name: Setup emulator
-          command: sdkmanager "system-images;android-24;default;armeabi-v7a;" && echo "no" | avdmanager create avd -n test -k "system-images;android-24;default;armeabi-v7a"
+          name: Create AVD
+          command: |
+            echo "n" | avdmanager -v create avd -n androidlearn -k "system-images;android-25;google_apis;armeabi-v7a" -c 512M -g google_apis  -d "Nexus 7 2013"
       - run:
-          name: Launch emulator
-          command: export LD_LIBRARY_PATH=${ANDROID_HOME}/emulator/lib64:${ANDROID_HOME}/emulator/lib64/qt/lib && emulator64-arm -avd test -noaudio -no-boot-anim -no-window -accel on
+          name: Run Emulator
           background: true
+          command: |
+            $ANDROID_SDK_ROOT/tools/emulator -no-window -noaudio -no-boot-anim -gpu swiftshader @androidlearn
+      - run:
+          name: Wait for Emulator
+          no_output_timeout: 15m
+          command: |
+            sleep 15
+            $ANDROID_SDK_ROOT/platform-tools/adb devices
+            sleep 10
       - run:
           name: Run PhotoGallery Instrumental test
           command: ./gradlew connectedAndroidTest
