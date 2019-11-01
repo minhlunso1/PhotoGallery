@@ -45,8 +45,8 @@ jobs:
           name: Test with Firebase Test Lab
           command: >
             sudo gcloud firebase test android run \
-              --app ~/app/build/outputs/apk/debug/*.apk \
-              --test ~/app/build/outputs/apk/androidTest/debug/*.apk \
+              --app app-debug.apk \
+              --test app-debug-androidTest.apk \
           # Need billing
 #              --results-bucket cloud-test-${GOOGLE_PROJECT_ID}
       - run:
