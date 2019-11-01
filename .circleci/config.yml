@@ -1,6 +1,7 @@
 version: 2
 jobs:
   build:
+    working_directory: ~/code
     docker:
       - image: circleci/android:api-29
     environment:
@@ -29,13 +30,30 @@ jobs:
           name: Run MinhImageLoader Unit Test
           command: ./gradlew :minhimageloader:test
       - run:
-          name: Setup Emulator
-          command: sdkmanager "system-images;android-25;google_apis;armeabi-v7a" && echo "no" | avdmanager create avd -n test -k "system-images;android-25;google_apis;armeabi-v7a"
+          name: Build debug APK and release APK
+          command: |
+            ./gradlew :app:assembleDebug
+            ./gradlew :app:assembleDebugAndroidTest
       - run:
-          name: Launch Emulator
-          command: export LD_LIBRARY_PATH=${ANDROID_HOME}/emulator/lib64:${ANDROID_HOME}/emulator/lib64/qt/lib && sdkmanager --update && emulator64-arm -avd test -noaudio -no-boot-anim -no-window -accel on
-          background: true
-          parallel: true
+          name: Store Google Service Account
+          command: echo $GCLOUD_SERVICE_KEY > ${HOME}/gcloud-service-key.json
+      - run:
+          name: Authorize gcloud and set config defaults
+          command: |
+            sudo gcloud auth activate-service-account --key-file=${HOME}/document/gcloud-service-key.json
+            sudo gcloud --quiet config set project ${GOOGLE_PROJECT_ID}
+      - run:
+          name: Test with Firebase Test Lab
+          command: >
+            sudo gcloud firebase test android run \
+              --app $(ls -dt ~/PhotoGallery/app/build/outputs/apk/debug/*.apk | head -1) \
+              --test $(ls -dt ~/PhotoGallery/app/build/outputs/apk/androidTest/debug/*.apk | head -1) \
+              --results-bucket cloud-test-${GOOGLE_PROJECT_ID}
+      - run:
+          name: Install gsutil dependency and copy test results data
+          command: |
+            sudo pip install -U crcmod
+            sudo gsutil -m cp -r -U `sudo gsutil ls gs://minh-bucket/minh-object | tail -1` ${CIRCLE_ARTIFACTS}/ | true
       - run:
           name: Run PhotoGallery Instrumental test
           command: ./gradlew connectedAndroidTest
