@@ -47,7 +47,8 @@ jobs:
             sudo gcloud firebase test android run \
               --app PhotoGallery/build/outputs/apk/debug/*.apk \
               --test PhotoGallery/build/outputs/apk/androidTest/debug/*.apk \
-              --results-bucket cloud-test-${GOOGLE_PROJECT_ID}
+          # Need billing
+#              --results-bucket cloud-test-${GOOGLE_PROJECT_ID}
       - run:
           name: Install gsutil dependency and copy test results data
           command: |
