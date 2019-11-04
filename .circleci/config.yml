@@ -55,12 +55,12 @@ jobs:
 #          command: |
 #            sudo pip install -U crcmod
 #            sudo gsutil -m cp -r -U `sudo gsutil ls gs://minh-bucket/minh-object | tail -1` ${CIRCLE_ARTIFACTS}/ | true
-      - run:
-          name: Run PhotoGallery Instrumental test
-          command: ./gradlew connectedAndroidTest
-      - run:
-          name: Run MinhImageLoader Instrumental test
-          command: ./gradlew :minhimageloader:connectedAndroidTest
+#      - run:
+#          name: Run PhotoGallery Instrumental test
+#          command: ./gradlew connectedAndroidTest
+#      - run:
+#          name: Run MinhImageLoader Instrumental test
+#          command: ./gradlew :minhimageloader:connectedAndroidTest
       - store_artifacts: # for display in Artifacts: https://circleci.com/docs/2.0/artifacts/ 
           path: app/build/reports
           destination: reports
